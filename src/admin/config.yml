@@ -4,8 +4,8 @@ backend:
 media_folder: "public/assets/blog"
 public_folder: "/assets/blog"
 collections: 
-  - label: "Blog"
-    name: "blog"
+  - name: "blog"
+    label: "Blog"
     folder: "src/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -18,23 +18,3 @@ collections:
       - { label: "Featured Image", name: "image", widget: "image" } 
       - { label: "Image caption", name: "imageAlt", widget: "string" } 
       - { label: "Body", name: "body", widget: "markdown" }
-  - label: "Options transverses"
-    name: options
-    editor:
-    preview: false
-    files:
-      - label: "Menu de navigation"
-        name: nav
-        file: "_data/nav.yml"
-        fields:
-          - label: "Entrées de menu"
-            label_singular: "Entrée de menu"
-            name: topLevelItems
-            widget: list
-            fields:
-              - {label: "Texte affiché", name: displayText, widget: string}
-              - {label: URL, name: url, widget: string}
-              - label: "Type d'objet"
-                name: itemType
-                widget: select
-                options: ["Link", "Button"]
